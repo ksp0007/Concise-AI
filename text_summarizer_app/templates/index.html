@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Text Summarizer</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Advanced Text Summarizer</h1>
+        <p class="subtitle">Transform lengthy articles into concise summaries using AI</p>
+        
+        <form method="post" action="/summarize-web">
+            <div class="form-group">
+                <label for="text">Enter your text:</label>
+                <textarea id="text" name="text" rows="10" required>{% if original_text %}{{ original_text }}{% endif %}</textarea>
+            </div>
+            
+            <div class="settings">
+                <div class="form-group">
+                    <label for="max_length">Max Summary Length:</label>
+                    <input type="number" id="max_length" name="max_length" value="130" min="30" max="500">
+                </div>
+                
+                <div class="form-group">
+                    <label for="min_length">Min Summary Length:</label>
+                    <input type="number" id="min_length" name="min_length" value="30" min="10" max="300">
+                </div>
+            </div>
+            
+            <button type="submit">Generate Summary</button>
+        </form>
+        
+        {% if show_results %}
+        <div class="results">
+            <div class="result-section">
+                <h2>Generated Summary</h2>
+                <div class="summary-box">{{ summary }}</div>
+                <p class="processing-time">Processed in {{ processing_time }}</p>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+    
+    <script src="/static/js/script.js"></script>
+</body>
+</html>

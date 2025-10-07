@@ -1,0 +1,8 @@
+fastapi
+uvicorn
+transformers
+torch
+nltk
+python-multipart
+pydantic
+Jinja2

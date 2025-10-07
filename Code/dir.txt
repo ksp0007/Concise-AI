@@ -1,0 +1,7 @@
+Text Summarization/
+|_requirements.txt
+|_text_summarizer.py
+
+pip install transformers nltk torch
+Run the script: python text_summarizer.py
+Paste your long article/text

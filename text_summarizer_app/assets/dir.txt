@@ -1,0 +1,29 @@
+text_summarizer_app/          # Root directory
+├── app/                     # Main application package
+│   ├── __init__.py          # Makes app a Python package
+│   ├── main.py              # FastAPI application setup and routes
+│   ├── schemas.py           # Pydantic models for request/response validation
+│   ├── services/            # Business logic components
+│   │   ├── __init__.py
+│   │   └── summarizer.py    # Core summarization logic (your original code)
+│   └── static/              # Static files (CSS, JS, images)
+│       ├── css/
+│       │   └── style.css    # Custom styles
+│       └── js/
+│           └── script.js    # Client-side JavaScript
+├── templates/               # HTML templates (Jinja2)
+│   └── index.html           # Main frontend template
+├── requirements.txt         # Python dependencies
+├── README.md                # Project documentation
+└── run.py                   # Application entry point (runs Uvicorn server)
+
+fastapi==0.68.1
+uvicorn==0.15.0
+transformers==4.12.3
+torch>=1.9.0
+nltk==3.6.2
+python-multipart==0.0.5
+pydantic==1.8.2
+Jinja2==3.0.1
+
+http://localhost:8000
